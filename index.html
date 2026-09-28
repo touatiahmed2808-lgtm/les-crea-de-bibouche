@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les Créa de Bibouche — créations artisanales faites à la main.">
+  <title>Les Créa de Bibouche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#accueil">Les Créa de <span>Bibouche</span></a>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#creations">Créations</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+    <button class="cart-button" onclick="toggleCart()">🛍️ Panier <span id="cartCount">0</span></button>
+  </nav>
+</header>
+
+<main>
+<section id="accueil" class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">✨ Fait avec les mains & avec le cœur</p>
+    <h1>Des créations uniques,<br><span>faites avec amour.</span></h1>
+    <p class="intro">Bienvenue chez Les Créa de Bibouche, un univers de créations artisanales imaginées et réalisées avec passion.</p>
+    <a class="button" href="#creations">Découvrir les créations</a>
+  </div>
+  <div class="hero-art">♡</div>
+</section>
+
+<section id="creations" class="section">
+  <div class="section-title">
+    <p class="eyebrow">La boutique</p>
+    <h2>Nos créations</h2>
+    <p>Les photos, noms et prix définitifs seront remplacés dès que tu me les donneras.</p>
+  </div>
+
+  <div class="products">
+    <article class="product-card">
+      <div class="product-image">📷<small>Photo à venir</small></div>
+      <div class="product-info">
+        <h3>Création n°1</h3>
+        <p>Création artisanale faite à la main.</p>
+        <div class="product-bottom"><strong>10,00 €</strong><button onclick="addToCart('Création n°1',10)">Ajouter</button></div>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-image">📷<small>Photo à venir</small></div>
+      <div class="product-info">
+        <h3>Création n°2</h3>
+        <p>Création artisanale faite à la main.</p>
+        <div class="product-bottom"><strong>15,00 €</strong><button onclick="addToCart('Création n°2',15)">Ajouter</button></div>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-image">📷<small>Photo à venir</small></div>
+      <div class="product-info">
+        <h3>Création n°3</h3>
+        <p>Création artisanale faite à la main.</p>
+        <div class="product-bottom"><strong>20,00 €</strong><button onclick="addToCart('Création n°3',20)">Ajouter</button></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="apropos" class="about">
+  <div>
+    <p class="eyebrow">L'histoire</p>
+    <h2>Créé à la main,<br>avec passion.</h2>
+  </div>
+  <p>Les Créa de Bibouche met à l’honneur le fait-main, les petites séries et les créations qui ont une âme. Cette présentation pourra être personnalisée avec l’histoire de Bibouche.</p>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="section-title">
+    <p class="eyebrow">Une question ?</p>
+    <h2>Contactez Bibouche</h2>
+    <p>Les coordonnées et réseaux sociaux seront ajoutés ici.</p>
+  </div>
+  <a class="button" href="mailto:contact@example.com">Envoyer un message</a>
+</section>
+</main>
+
+<aside id="cart" class="cart">
+  <div class="cart-header"><h2>Mon panier</h2><button onclick="toggleCart()">×</button></div>
+  <div id="cartItems" class="cart-items"><p class="empty">Ton panier est vide.</p></div>
+  <div class="cart-footer">
+    <div><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+    <button class="checkout" onclick="checkout()">Passer la commande</button>
+    <p class="note">Le paiement sera ajouté après la mise en place du système de commande.</p>
+  </div>
+</aside>
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+<footer><p>© 2026 Les Créa de Bibouche — Créations artisanales</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
