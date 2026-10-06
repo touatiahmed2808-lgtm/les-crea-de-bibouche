@@ -7,129 +7,420 @@
   <title>Les Créa de Bibouche</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="header">
-<a class="logo" href="#accueil">
-  <img src="logo.png" alt="Les Créa de Bibouche">
-</a>
+
+  <a class="logo" href="#accueil">
+    <img src="logo.png" alt="Les Créa de Bibouche">
+  </a>
+
   <nav>
     <a href="#accueil">Accueil</a>
     <a href="#creations">Créations</a>
     <a href="#apropos">À propos</a>
     <a href="#contact">Contact</a>
-    <button class="cart-button" onclick="toggleCart()">🛍️ Panier <span id="cartCount">0</span></button>
+
+    <button class="cart-button" onclick="toggleCart()">
+      🛍️ Panier <span id="cartCount">0</span>
+    </button>
   </nav>
+
 </header>
 
 <main>
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
 <section id="accueil" class="hero">
+
   <div class="hero-content">
-    <p class="eyebrow">✨ Fait avec les mains & avec le cœur</p>
-    <h1>Des créations uniques,<br><span>faites avec amour.</span></h1>
-    <p class="intro">Bienvenue chez Les Créa de Bibouche, un univers de créations artisanales imaginées et réalisées avec passion.</p>
-    <a class="button" href="#creations">Découvrir les créations</a>
+
+    <p class="eyebrow">
+      ✨ Fait avec les mains & avec le cœur
+    </p>
+
+    <h1>
+      Des créations uniques,<br>
+      <span>faites avec amour.</span>
+    </h1>
+
+    <p class="intro">
+      Bienvenue chez Les Créa de Bibouche, un univers de créations
+      artisanales imaginées et réalisées avec passion.
+    </p>
+
+    <a class="button" href="#creations">
+      Découvrir les créations
+    </a>
+
   </div>
-  <div class="hero-art">♡</div>
+
+  <div class="hero-art">
+    ♡
+  </div>
+
 </section>
 
+
+<!-- =========================
+     CRÉATIONS
+========================= -->
+
 <section id="creations" class="section">
+
   <div class="section-title">
-    <p class="eyebrow">La boutique</p>
-    <h2>Nos créations</h2>
-    <p>Les photos, noms et prix définitifs seront remplacés dès que tu me les donneras.</p>
+
+    <p class="eyebrow">
+      La boutique
+    </p>
+
+    <h2>
+      Nos créations
+    </h2>
+
+    <p>
+      Les photos, noms et prix définitifs seront remplacés
+      dès que tu me les donneras.
+    </p>
+
   </div>
+
 
   <div class="products">
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <rect x="13" y="10" width="38" height="44" rx="7"></rect>
-    <path d="M20 20h24M20 29h17M20 38h12"></path>
-    <circle cx="44" cy="44" r="7"></circle>
-    <path d="M41 44l2 2 4-5"></path>
-  </svg>
-</div>
-  </article>
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <path d="M25 18h14v7H25z"></path>
-    <path d="M29 18v-6h6v6"></path>
-    <rect x="18" y="25" width="28" height="29" rx="6"></rect>
-    <path d="M25 34h14M25 40h9"></path>
-  </svg>
-</div>
-  </article>
+    <!-- STICKERS -->
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <path d="M27 28c-3-5 2-8 2-13 5 5 8 8 5 13"></path>
-    <path d="M22 29h20v25H22z"></path>
-    <path d="M18 54h28"></path>
-    <path d="M27 36h10"></path>
-  </svg>
-</div>
-  </article>
+    <article class="product-card category-card">
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <path d="M12 31L32 14l20 17"></path>
-    <path d="M18 28v25h28V28"></path>
-    <path d="M27 53V39h10v14"></path>
-    <circle cx="42" cy="23" r="5"></circle>
-  </svg>
-</div>
-  </article>
+      <div class="product-image category-icon">
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <rect x="19" y="7" width="26" height="50" rx="6"></rect>
-    <circle cx="32" cy="49" r="2"></circle>
-    <rect x="25" y="13" width="7" height="7" rx="2"></rect>
-    <circle cx="38" cy="16" r="3"></circle>
-  </svg>
-</div>
-  </article>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
 
-  <div class="product-image category-icon">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <path d="M32 9l3.5 12.5L48 25l-12.5 3.5L32 41l-3.5-12.5L16 25l12.5-3.5z"></path>
-    <path d="M49 39l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"></path>
-  </svg>
-</div>
-  </article>
+          <rect
+            x="13"
+            y="10"
+            width="38"
+            height="44"
+            rx="7">
+          </rect>
 
-</div>
+          <path d="M20 20h24M20 29h17M20 38h12"></path>
+
+          <circle
+            cx="44"
+            cy="44"
+            r="7">
+          </circle>
+
+          <path d="M41 44l2 2 4-5"></path>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Stickers
+        </h3>
+
+        <p>
+          Découvrez nos créations de stickers.
+        </p>
+
+        <button onclick="showCategory('Stickers')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- PARFUMS -->
+
+    <article class="product-card category-card">
+
+      <div class="product-image category-icon">
+
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+          <path d="M25 18h14v7H25z"></path>
+
+          <path d="M29 18v-6h6v6"></path>
+
+          <rect
+            x="18"
+            y="25"
+            width="28"
+            height="29"
+            rx="6">
+          </rect>
+
+          <path d="M25 34h14M25 40h9"></path>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Parfums
+        </h3>
+
+        <p>
+          Découvrez notre sélection de parfums.
+        </p>
+
+        <button onclick="showCategory('Parfums')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- BOUGIES -->
+
+    <article class="product-card category-card">
+
+      <div class="product-image category-icon">
+
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+          <path d="M27 28c-3-5 2-8 2-13 5 5 8 8 5 13"></path>
+
+          <path d="M22 29h20v25H22z"></path>
+
+          <path d="M18 54h28"></path>
+
+          <path d="M27 36h10"></path>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Bougies
+        </h3>
+
+        <p>
+          Des bougies créées avec soin.
+        </p>
+
+        <button onclick="showCategory('Bougies')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- DÉCO -->
+
+    <article class="product-card category-card">
+
+      <div class="product-image category-icon">
+
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+          <path d="M12 31L32 14l20 17"></path>
+
+          <path d="M18 28v25h28V28"></path>
+
+          <path d="M27 53V39h10v14"></path>
+
+          <circle
+            cx="42"
+            cy="23"
+            r="5">
+          </circle>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Déco
+        </h3>
+
+        <p>
+          Des créations pour décorer votre intérieur.
+        </p>
+
+        <button onclick="showCategory('Déco')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- COQUES DE TÉLÉPHONE -->
+
+    <article class="product-card category-card">
+
+      <div class="product-image category-icon">
+
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+          <rect
+            x="19"
+            y="7"
+            width="26"
+            height="50"
+            rx="6">
+          </rect>
+
+          <circle
+            cx="32"
+            cy="49"
+            r="2">
+          </circle>
+
+          <rect
+            x="25"
+            y="13"
+            width="7"
+            height="7"
+            rx="2">
+          </rect>
+
+          <circle
+            cx="38"
+            cy="16"
+            r="3">
+          </circle>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Coques de téléphone
+        </h3>
+
+        <p>
+          Des coques personnalisées et originales.
+        </p>
+
+        <button onclick="showCategory('Coques de téléphone')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- AUTRES CRÉATIONS -->
+
+    <article class="product-card category-card">
+
+      <div class="product-image category-icon">
+
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+
+          <path d="M32 9l3.5 12.5L48 25l-12.5 3.5L32 41l-3.5-12.5L16 25l12.5-3.5z"></path>
+
+          <path d="M49 39l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"></path>
+
+        </svg>
+
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Autres créations
+        </h3>
+
+        <p>
+          Découvrez nos autres créations artisanales.
+        </p>
+
+        <button onclick="showCategory('Autres créations')">
+          Découvrir
+        </button>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     À PROPOS
+========================= -->
 
 <section id="apropos" class="about">
 
   <div class="about-image">
+
     <div class="about-placeholder">
-      <span>♡</span>
-      <p>Fait main<br>avec amour</p>
+
+      <span>
+        ♡
+      </span>
+
+      <p>
+        Fait main<br>
+        avec amour
+      </p>
+
     </div>
+
   </div>
 
+
   <div class="about-content">
-    <p class="eyebrow">Notre histoire</p>
 
-    <h2>À propos des Créa de Bibouche</h2>
+    <p class="eyebrow">
+      Notre histoire
+    </p>
 
-    <p>Bienvenue dans mon univers !</p>
+    <h2>
+      À propos des Créa de Bibouche
+    </h2>
 
     <p>
-      Les Créa de Bibouche, c'est avant tout une passion : celle de créer
-      des objets uniques et faits main, avec amour et attention.
+      Bienvenue dans mon univers !
     </p>
 
     <p>
-      Chaque création est pensée avec soin pour apporter une touche
-      d'authenticité, de douceur et d'originalité à votre quotidien.
+      Les Créa de Bibouche, c'est avant tout une passion :
+      celle de créer des objets uniques et faits main,
+      avec amour et attention.
     </p>
 
     <p>
-      Merci de soutenir l'artisanat et de faire partie de cette belle aventure !
+      Chaque création est pensée avec soin pour apporter
+      une touche d'authenticité, de douceur et d'originalité
+      à votre quotidien.
+    </p>
+
+    <p>
+      Merci de soutenir l'artisanat et de faire partie
+      de cette belle aventure !
     </p>
 
     <div class="about-signature">
@@ -140,31 +431,128 @@
       ♡ Des créations uniques<br>
       pour des moments précieux
     </div>
+
   </div>
 
 </section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact" class="section contact">
+
   <div class="section-title">
-    <p class="eyebrow">Une question ?</p>
-    <h2>Contactez Bibouche</h2>
-    <p>Les coordonnées et réseaux sociaux seront ajoutés ici.</p>
+
+    <p class="eyebrow">
+      Une question ?
+    </p>
+
+    <h2>
+      Contactez Bibouche
+    </h2>
+
+    <p>
+      Les coordonnées et réseaux sociaux seront ajoutés ici.
+    </p>
+
   </div>
-  <a class="button" href="mailto:contact@example.com">Envoyer un message</a>
+
+  <a
+    class="button"
+    href="mailto:contact@example.com">
+
+    Envoyer un message
+
+  </a>
+
 </section>
+
 </main>
 
-<aside id="cart" class="cart">
-  <div class="cart-header"><h2>Mon panier</h2><button onclick="toggleCart()">×</button></div>
-  <div id="cartItems" class="cart-items"><p class="empty">Ton panier est vide.</p></div>
-  <div class="cart-footer">
-    <div><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
-    <button class="checkout" onclick="checkout()">Passer la commande</button>
-    <p class="note">Le paiement sera ajouté après la mise en place du système de commande.</p>
-  </div>
-</aside>
-<div id="overlay" class="overlay" onclick="toggleCart()"></div>
 
-<footer><p>© 2026 Les Créa de Bibouche — Créations artisanales</p></footer>
+<!-- =========================
+     PANIER
+========================= -->
+
+<aside id="cart" class="cart">
+
+  <div class="cart-header">
+
+    <h2>
+      Mon panier
+    </h2>
+
+    <button onclick="toggleCart()">
+      ×
+    </button>
+
+  </div>
+
+
+  <div id="cartItems" class="cart-items">
+
+    <p class="empty">
+      Ton panier est vide.
+    </p>
+
+  </div>
+
+
+  <div class="cart-footer">
+
+    <div>
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        0,00 €
+      </strong>
+
+    </div>
+
+    <button
+      class="checkout"
+      onclick="checkout()">
+
+      Passer la commande
+
+    </button>
+
+    <p class="note">
+      Le paiement sera ajouté après la mise en place
+      du système de commande.
+    </p>
+
+  </div>
+
+</aside>
+
+
+<div
+  id="overlay"
+  class="overlay"
+  onclick="toggleCart()">
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 Les Créa de Bibouche — Créations artisanales
+  </p>
+
+</footer>
+
+
 <script src="script.js"></script>
+
 </body>
 </html>
