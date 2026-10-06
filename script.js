@@ -32,7 +32,23 @@ function openCart(){
   document.getElementById('overlay').classList.add('open');
 }
 function checkout(){
-  if(!cart.length){alert('Ton panier est vide.');return;}
+  if(!cart.length){
+    alert('Ton panier est vide.');
+    return;
+  }
+
   alert('La prochaine étape sera de connecter la commande et le paiement.');
 }
+
+
+function showCategory(category){
+
+  alert(
+    '✨ ' + category +
+    '\n\nLes créations de cette catégorie seront bientôt disponibles.'
+  );
+
+}
+
+
 renderCart();
