@@ -43,12 +43,19 @@ function checkout(){
 
 function showCategory(category){
 
-  alert(
-    '✨ ' + category +
-    '\n\nLes créations de cette catégorie seront bientôt disponibles.'
-  );
+  const section = document.getElementById('categoryProducts');
+  const title = document.getElementById('categoryTitle');
+  const message = document.getElementById('categoryMessage');
+
+  title.textContent = category;
+
+  message.textContent =
+    'Les créations de cette catégorie seront bientôt disponibles.';
+
+  section.style.display = 'block';
+
+  section.scrollIntoView({
+    behavior: 'smooth'
+  });
 
 }
-
-
-renderCart();
