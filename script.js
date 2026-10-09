@@ -71,7 +71,7 @@ function showCategory(category) {
       { photo: '1000037474.png', prix: 12 },
       { photo: '1000037475.jpg', prix: 12 }
     ],
-     'Porte-clés': [
+         'Porte-clés': [
       { photo: '1000036998.jpg', prix: 6 },
       { photo: '1000036999.jpg', prix: 6 },
       { photo: '1000037000.jpg', prix: 6 },
@@ -84,23 +84,36 @@ function showCategory(category) {
       { photo: '1000037478.jpg', prix: 6 },
       { photo: '1000037480.jpg', prix: 6 },
       { photo: '1000037481.jpg', prix: 6 }
+    ],
+
+    'Lampes': [
+      { photo: '1000036978.jpg', prix: 15 },
+      { photo: '1000036979.jpg', prix: 15 },
+      { photo: '1000036980.jpg', prix: 15 },
+      { photo: '1000036981.jpg', prix: 15 },
+      { photo: '1000036982.jpg', prix: 15 },
+      { photo: '1000036983.jpg', prix: 15 },
+      { photo: '1000036984.jpg', prix: 15 }
     ]
   };
 
   if (produits[category]) {
-   message.textContent = category === 'Déco'
+  message.textContent = category === 'Déco'
   ? 'Découvrez nos créations de décoration artisanale.'
   : category === 'Porte-clés'
     ? 'Découvrez nos porte-clés artisanaux à 6 € pièce.'
-    : 'Découvrez nos coques de téléphone.';
+    : category === 'Lampes'
+      ? 'Découvrez nos lampes artisanales à 15 € pièce.'
+      : 'Découvrez nos coques de téléphone.';
 
     productList.innerHTML = produits[category].map((produit, index) => {
     const nom = category === 'Déco'
   ? `Décoration ${index + 1}`
   : category === 'Porte-clés'
     ? `Porte-clés ${index + 1}`
-    : `Coque de téléphone ${index + 1}`;
-
+    : category === 'Lampes'
+      ? `Lampe ${index + 1}`
+      : `Coque de téléphone ${index + 1}`;
       return `
         <article class="product-card">
           <div class="product-image">
