@@ -70,18 +70,36 @@ function showCategory(category) {
       { photo: '1000037140.jpg', prix: 6 },
       { photo: '1000037474.png', prix: 12 },
       { photo: '1000037475.jpg', prix: 12 }
+    ],
+     'Porte-clés': [
+      { photo: '1000036998.jpg', prix: 6 },
+      { photo: '1000036999.jpg', prix: 6 },
+      { photo: '1000037000.jpg', prix: 6 },
+      { photo: '1000037001.jpg', prix: 6 },
+      { photo: '1000037002.jpg', prix: 6 },
+      { photo: '1000037003.jpg', prix: 6 },
+      { photo: '1000037004.jpg', prix: 6 },
+      { photo: '1000037005.jpg', prix: 6 },
+      { photo: '1000037006.jpg', prix: 6 },
+      { photo: '1000037478.jpg', prix: 6 },
+      { photo: '1000037480.jpg', prix: 6 },
+      { photo: '1000037481.jpg', prix: 6 }
     ]
   };
 
   if (produits[category]) {
-    message.textContent = category === 'Déco'
-      ? 'Découvrez nos créations de décoration artisanale.'
-      : 'Découvrez nos coques de téléphone.';
+   message.textContent = category === 'Déco'
+  ? 'Découvrez nos créations de décoration artisanale.'
+  : category === 'Porte-clés'
+    ? 'Découvrez nos porte-clés artisanaux à 6 € pièce.'
+    : 'Découvrez nos coques de téléphone.';
 
     productList.innerHTML = produits[category].map((produit, index) => {
-      const nom = category === 'Déco'
-        ? `Décoration ${index + 1}`
-        : `Coque de téléphone ${index + 1}`;
+     const nom = category === 'Déco'
+  ? `Décoration ${index + 1}`
+  : category === 'Porte-clés'
+    ? `Porte-clés ${index + 1}`
+    : `Coque de téléphone ${index + 1}`;
 
       return `
         <article class="product-card">
