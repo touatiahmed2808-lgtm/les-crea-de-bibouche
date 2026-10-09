@@ -31,11 +31,45 @@ function openCart(){
   document.getElementById('cart').classList.add('open');
   document.getElementById('overlay').classList.add('open');
 }
-function checkout(){
-  if(!cart.length){
+function checkout() {
+  if (!cart.length) {
     alert('Ton panier est vide.');
     return;
   }
+
+  const nom = prompt('Quel est ton nom ?');
+  if (!nom || !nom.trim()) return;
+
+  const telephone = prompt('Quel est ton numéro de téléphone ?');
+  if (!telephone || !telephone.trim()) return;
+
+  const adresse = prompt('Quelle est ton adresse de livraison ?');
+  if (!adresse || !adresse.trim()) return;
+
+  const produits = cart.map(item =>
+    `- ${item.name} x ${item.qty} : ${(item.price * item.qty).toFixed(2).replace('.', ',')} €`
+  ).join('\n');
+
+  const total = cart.reduce(
+    (somme, item) => somme + item.price * item.qty,
+    0
+  );
+
+  const message =
+    `Bonjour, je souhaite passer une commande chez Les Créa de Bibouche.\n\n` +
+    `Nom : ${nom}\n` +
+    `Téléphone : ${telephone}\n` +
+    `Adresse de livraison : ${adresse}\n\n` +
+    `Ma commande :\n${produits}\n\n` +
+    `Total provisoire : ${total.toFixed(2).replace('.', ',')} €\n\n` +
+    `Merci de confirmer ma commande et les frais de livraison.`;
+
+  const numero = '33665051774';
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, '_blank');
+}
 
   alert('La prochaine étape sera de connecter la commande et le paiement.');
 }
