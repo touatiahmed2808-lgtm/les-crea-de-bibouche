@@ -42,7 +42,6 @@ function checkout(){
 
 
 function showCategory(category) {
-
   const section = document.getElementById('categoryProducts');
   const title = document.getElementById('categoryTitle');
   const message = document.getElementById('categoryMessage');
@@ -52,60 +51,68 @@ function showCategory(category) {
   section.style.display = 'block';
   productList.innerHTML = '';
 
-  if (category === 'Coques de téléphone') {
+  const produits = {
+    'Coques de téléphone': [
+      { photo: '1000037144.jpg', prix: 12 },
+      { photo: '1000037148.jpg', prix: 12 },
+      { photo: '1000037149.jpg', prix: 12 },
+      { photo: '1000037150.jpg', prix: 12 },
+      { photo: '1000037262.png', prix: 12 },
+      { photo: '1000037263.png', prix: 12 }
+    ],
 
-    message.textContent = 'Découvrez nos coques de téléphone à 12 € chacune.';
+    'Déco': [
+      { photo: '1000036985.jpg', prix: 40 },
+      { photo: '1000037010.jpg', prix: 40 },
+      { photo: '1000037011.jpg', prix: 40 },
+      { photo: '1000037138.jpg', prix: 6 },
+      { photo: '1000037139.jpg', prix: 6 },
+      { photo: '1000037140.jpg', prix: 6 },
+      { photo: '1000037474.png', prix: 12 },
+      { photo: '1000037475.jpg', prix: 12 }
+    ]
+  };
 
-    const coques = [
-      '1000037144.jpg',
-      '1000037148.jpg',
-      '1000037149.jpg',
-      '1000037150.jpg',
-      '1000037262.png',
-      '1000037263.png'
-    ];
+  if (produits[category]) {
+    message.textContent = category === 'Déco'
+      ? 'Découvrez nos créations de décoration artisanale.'
+      : 'Découvrez nos coques de téléphone.';
 
-    productList.innerHTML = coques.map((photo, index) => `
-      <article class="product-card">
+    productList.innerHTML = produits[category].map((produit, index) => {
+      const nom = category === 'Déco'
+        ? `Décoration ${index + 1}`
+        : `Coque de téléphone ${index + 1}`;
 
-        <div class="product-image">
-          <img
-            src="images/${photo}"
-            alt="Coque de téléphone ${index + 1}"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="product-info">
-
-          <h3>Coque de téléphone ${index + 1}</h3>
-
-          <p>Une coque originale pour votre téléphone.</p>
-
-          <div class="product-bottom">
-
-            <strong>12,00 €</strong>
-
-            <button onclick="addToCart('Coque de téléphone ${index + 1}', 12)">
-              Ajouter au panier
-            </button>
-
+      return `
+        <article class="product-card">
+          <div class="product-image">
+            <img
+              src="images/${produit.photo}"
+              alt="${nom}"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:contain;"
+            >
           </div>
 
-        </div>
+          <div class="product-info">
+            <h3>${nom}</h3>
+            <p>Création artisanale à découvrir.</p>
 
-      </article>
-    `).join('');
+            <div class="product-bottom">
+              <strong>${produit.prix.toFixed(2).replace('.', ',')} €</strong>
 
+              <button onclick="addToCart('${nom}', ${produit.prix})">
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
   } else {
-
     message.textContent =
       'Les créations de cette catégorie seront bientôt disponibles.';
-
   }
 
-  section.scrollIntoView({
-    behavior: 'smooth'
-  });
-
+  section.scrollIntoView({ behavior: 'smooth' });
 }
