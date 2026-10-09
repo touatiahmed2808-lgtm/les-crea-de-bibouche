@@ -41,18 +41,68 @@ function checkout(){
 }
 
 
-function showCategory(category){
+function showCategory(category) {
 
   const section = document.getElementById('categoryProducts');
   const title = document.getElementById('categoryTitle');
   const message = document.getElementById('categoryMessage');
+  const productList = document.getElementById('categoryProductList');
 
   title.textContent = category;
-
-  message.textContent =
-    'Les créations de cette catégorie seront bientôt disponibles.';
-
   section.style.display = 'block';
+  productList.innerHTML = '';
+
+  if (category === 'Coques de téléphone') {
+
+    message.textContent = 'Découvrez nos coques de téléphone à 12 € chacune.';
+
+    const coques = [
+      '1000037144.jpg',
+      '1000037148.jpg',
+      '1000037149.jpg',
+      '1000037150.jpg',
+      '1000037262.png',
+      '1000037263.png'
+    ];
+
+    productList.innerHTML = coques.map((photo, index) => `
+      <article class="product-card">
+
+        <div class="product-image">
+          <img
+            src="images/${photo}"
+            alt="Coque de téléphone ${index + 1}"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <h3>Coque de téléphone ${index + 1}</h3>
+
+          <p>Une coque originale pour votre téléphone.</p>
+
+          <div class="product-bottom">
+
+            <strong>12,00 €</strong>
+
+            <button onclick="addToCart('Coque de téléphone ${index + 1}', 12)">
+              Ajouter au panier
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+    `).join('');
+
+  } else {
+
+    message.textContent =
+      'Les créations de cette catégorie seront bientôt disponibles.';
+
+  }
 
   section.scrollIntoView({
     behavior: 'smooth'
