@@ -71,8 +71,7 @@ function checkout() {
   window.open(url, '_blank');
 }
 
-  alert('La prochaine étape sera de connecter la commande et le paiement.');
-}
+  
 
 
 function showCategory(category) {
