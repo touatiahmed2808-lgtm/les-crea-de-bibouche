@@ -95,7 +95,7 @@ function showCategory(category) {
     : 'Découvrez nos coques de téléphone.';
 
     productList.innerHTML = produits[category].map((produit, index) => {
-     const nom = category === 'Déco'
+    const nom = category === 'Déco'
   ? `Décoration ${index + 1}`
   : category === 'Porte-clés'
     ? `Porte-clés ${index + 1}`
