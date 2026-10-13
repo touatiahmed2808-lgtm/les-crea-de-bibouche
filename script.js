@@ -31,107 +31,98 @@ function openCart(){
   document.getElementById('cart').classList.add('open');
   document.getElementById('overlay').classList.add('open');
 }
+```javascript
 function checkout() {
-if (!cart.length) {
-alert('Ton panier est vide.');
-return;
+  if (!cart.length) {
+    alert('Ton panier est vide.');
+    return;
+  }
+
+  const nom = prompt('Quel est ton nom ?');
+  if (!nom || !nom.trim()) return;
+
+  const telephone = prompt('Quel est ton numéro de téléphone ?');
+  if (!telephone || !telephone.trim()) return;
+
+  const modeLivraison = prompt(
+    'Choisis ton mode de livraison :\n' +
+    '1 = Point relais Mondial Relay\n' +
+    '2 = Livraison à domicile'
+  );
+
+  if (modeLivraison !== '1' && modeLivraison !== '2') {
+    alert('Choix invalide. Recommence ta commande.');
+    return;
+  }
+
+  let livraison = '';
+
+  if (modeLivraison === '1') {
+    const codeRelais = document.getElementById('ParcelShopCode')?.value;
+    const relaisTexte = document.getElementById('relais-selectionne')?.textContent;
+
+    if (!codeRelais || !relaisTexte ||
+        relaisTexte.includes('Aucun point relais')) {
+      alert('Choisis d’abord un point relais sur la carte.');
+      return;
+    }
+
+    livraison =
+      'Mode de livraison : Point relais Mondial Relay\n' +
+      'Code du relais : ' + codeRelais + '\n' +
+      'Point relais : ' + relaisTexte;
+  } else {
+    const adresse = prompt('Quelle est ton adresse complète de livraison ?');
+    if (!adresse || !adresse.trim()) return;
+
+    livraison =
+      'Mode de livraison : À domicile\n' +
+      'Adresse de livraison : ' + adresse.trim();
+  }
+
+  const produits = cart.map(item =>
+    '- ' + item.name + ' x ' + item.qty + ' : ' +
+    (item.price * item.qty).toFixed(2).replace('.', ',') + ' €'
+  ).join('\n');
+
+  const total = cart.reduce(
+    (somme, item) => somme + item.price * item.qty,
+    0
+  );
+
+  const message =
+    'Bonjour, je souhaite passer une commande chez Les Créa de Bibouche.\n\n' +
+    'Nom : ' + nom.trim() + '\n' +
+    'Téléphone : ' + telephone.trim() + '\n' +
+    livraison + '\n\n' +
+    'Ma commande :\n' + produits + '\n\n' +
+    'Total provisoire : ' + total.toFixed(2).replace('.', ',') + ' €\n\n' +
+    'Merci de confirmer ma commande et les frais de livraison.';
+
+  const moyenCommande = prompt(
+    'Comment souhaites-tu envoyer ta commande ?\n' +
+    '1 = WhatsApp\n' +
+    '2 = E-mail'
+  );
+
+  if (moyenCommande === '1') {
+    const numero = '33665051774';
+    const url = 'https://wa.me/' + numero +
+      '?text=' + encodeURIComponent(message);
+
+    window.open(url, '_blank');
+  } else if (moyenCommande === '2') {
+    const sujet = 'Commande - Les Créa de Bibouche';
+    const url = 'mailto:lescreabibouche@gmail.com' +
+      '?subject=' + encodeURIComponent(sujet) +
+      '&body=' + encodeURIComponent(message);
+
+    window.location.href = url;
+  } else {
+    alert('Choix invalide. Ta commande n’a pas été envoyée.');
+  }
 }
-
-const nom = prompt('Quel est ton nom ?');
-if (!nom || !nom.trim()) return;
-
-const telephone = prompt('Quel est ton numéro de téléphone ?');
-if (!telephone || !telephone.trim()) return;
-
-const modeLivraison = prompt(
-'Choisis ton mode de livraison :\n' +
-'1 = Point relais Mondial Relay\n' +
-'2 = Livraison à domicile'
-);
-
-if (modeLivraison !== '1' && modeLivraison !== '2') {
-alert('Choix invalide. Recommence ta commande.');
-return;
-}
-
-let livraison = '';
-
-if (modeLivraison === '1') {
-const codeRelais = document.getElementById('ParcelShopCode')?.value;
-const relaisTexte = document.getElementById('relais-selectionne')?.textContent;
-
 ```
-if (!codeRelais || !relaisTexte || relaisTexte.includes('Aucun point relais')) {
-  alert('Choisis d’abord un point relais sur la carte avant de passer commande.');
-  return;
-}
-
-livraison =
-  'Mode de livraison : Point relais Mondial Relay\n' +
-  'Code du relais : ' + codeRelais + '\n' +
-  'Point relais : ' + relaisTexte;
-```
-
-} else {
-const adresse = prompt('Quelle est ton adresse complète de livraison ?');
-if (!adresse || !adresse.trim()) return;
-
-```
-livraison =
-  'Mode de livraison : À domicile\n' +
-  'Adresse de livraison : ' + adresse.trim();
-```
-
-}
-
-const produits = cart.map(item =>
-`- ${item.name} x ${item.qty} : ${(item.price * item.qty).toFixed(2).replace('.', ',')} €`
-).join('\n');
-
-const total = cart.reduce(
-(somme, item) => somme + item.price * item.qty,
-0
-);
-
-const message =
-'Bonjour, je souhaite passer une commande chez Les Créa de Bibouche.\n\n' +
-'Nom : ' + nom.trim() + '\n' +
-'Téléphone : ' + telephone.trim() + '\n' +
-livraison + '\n\n' +
-'Ma commande :\n' + produits + '\n\n' +
-'Total provisoire : ' + total.toFixed(2).replace('.', ',') + ' €\n\n' +
-'Merci de confirmer ma commande et les frais de livraison.';
-
-const moyenCommande = prompt(
-'Comment souhaites-tu envoyer ta commande ?\n' +
-'1 = WhatsApp\n' +
-'2 = E-mail'
-);
-
-if (moyenCommande === '1') {
-const numero = '33665051774';
-const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(message);
-window.open(url, '_blank');
-} else if (moyenCommande === '2') {
-const sujet = 'Commande - Les Créa de Bibouche';
-const url =
-'mailto:lescreabibouche@gmail.com' +
-'?subject=' + encodeURIComponent(sujet) +
-'&body=' + encodeURIComponent(message);
-
-```
-window.location.href = url;
-```
-
-} else {
-alert('Choix invalide. Ta commande n’a pas été envoyée.');
-}
-}
-
-
-
-  
-
 
 function showCategory(category) {
   const section = document.getElementById('categoryProducts');
