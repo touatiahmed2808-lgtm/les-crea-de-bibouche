@@ -31,7 +31,7 @@ function openCart(){
   document.getElementById('cart').classList.add('open');
   document.getElementById('overlay').classList.add('open');
 }
-```javascript
+
 function checkout() {
   if (!cart.length) {
     alert('Ton panier est vide.');
@@ -122,7 +122,7 @@ function checkout() {
     alert('Choix invalide. Ta commande n’a pas été envoyée.');
   }
 }
-```
+
 
 function showCategory(category) {
   const section = document.getElementById('categoryProducts');
