@@ -627,6 +627,34 @@
 
 </footer>
 
+<!-- Bibliothèques nécessaires au widget -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script>
+
+<script>
+$(document).ready(function () {
+  $("#Zone_Widget").MR_ParcelShopPicker({
+    Target: "#ParcelShopCode",
+    Brand: "BDTEST  ",
+    Country: "FR",
+    Responsive: true,
+    OnParcelShopSelected: function (data) {
+      $("#ParcelShopCode").val(data.ID);
+
+      $("#relais-selectionne").text(
+        data.Nom + " — " +
+        data.Adresse1 + " — " +
+        data.CP + " " +
+        data.Ville
+      );
+    }
+  });
+});
+</script>
 
 <script src="script.js"></script>
 
