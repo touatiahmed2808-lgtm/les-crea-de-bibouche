@@ -46,8 +46,7 @@ if (!telephone || !telephone.trim()) return;
 const modeLivraison = prompt(
 'Choisis ton mode de livraison :\n' +
 '1 = Point relais Mondial Relay\n' +
-'2 = Livraison à domicile\n\n' +
-'Entre 1 ou 2.'
+'2 = Livraison à domicile'
 );
 
 if (modeLivraison !== '1' && modeLivraison !== '2') {
@@ -80,7 +79,7 @@ if (!adresse || !adresse.trim()) return;
 ```
 livraison =
   'Mode de livraison : À domicile\n' +
-  'Adresse de livraison : ' + adresse;
+  'Adresse de livraison : ' + adresse.trim();
 ```
 
 }
@@ -103,11 +102,32 @@ livraison + '\n\n' +
 'Total provisoire : ' + total.toFixed(2).replace('.', ',') + ' €\n\n' +
 'Merci de confirmer ma commande et les frais de livraison.';
 
+const moyenCommande = prompt(
+'Comment souhaites-tu envoyer ta commande ?\n' +
+'1 = WhatsApp\n' +
+'2 = E-mail'
+);
+
+if (moyenCommande === '1') {
 const numero = '33665051774';
 const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(message);
-
 window.open(url, '_blank');
+} else if (moyenCommande === '2') {
+const sujet = 'Commande - Les Créa de Bibouche';
+const url =
+'mailto:lescreabibouche@gmail.com' +
+'?subject=' + encodeURIComponent(sujet) +
+'&body=' + encodeURIComponent(message);
+
+```
+window.location.href = url;
+```
+
+} else {
+alert('Choix invalide. Ta commande n’a pas été envoyée.');
 }
+}
+
 
 
   
